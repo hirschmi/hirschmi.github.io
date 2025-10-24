@@ -1,31 +1,155 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr. Hirsch's Class Arcade</title>
+    <title>Class Arcade</title>
+    <!-- Import the classic pixel font "Press Start 2P" -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; padding: 20px; }
-        h1 { text-align: center; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .game-card { border: 1px solid #ccc; border-radius: 8px; padding: 10px; text-align: center; }
-        .game-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 4px; }
-        .game-card a { display: block; background: #007bff; color: white; padding: 10px; border-radius: 4px; text-decoration: none; margin-top: 10px; }
+        /* CSS variables for our neon colors */
+        :root {
+            --neon-green: #39ff14;
+            --neon-cyan: #0ff;
+            --neon-magenta: #f0f;
+            --neon-yellow: #ff0;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            padding: 20px;
+            /* Add a subtle scanlines effect */
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.3) 50%,
+                transparent 50%
+            );
+            background-size: 100% 4px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--neon-yellow);
+            font-size: 2.5rem;
+            /* Create the neon glow effect */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px var(--neon-yellow),
+                0 0 30px var(--neon-yellow);
+            margin-bottom: 50px;
+        }
+
+        .gallery {
+            display: grid;
+            /* Create a responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .game-card {
+            background-color: #111;
+            /* Use a neon border */
+            border: 3px solid var(--neon-cyan);
+            /* Add a glow to the whole card */
+            box-shadow: 
+                0 0 10px var(--neon-cyan),
+                inset 0 0 10px var(--neon-cyan);
+            padding: 20px;
+            text-align: center;
+            /* Remove rounded corners for a retro feel */
+            border-radius: 0;
+            transition: transform 0.2s ease-out;
+        }
+
+        .game-card:hover {
+            transform: scale(1.03);
+        }
+
+        .game-card h3 {
+            color: var(--neon-green);
+            font-size: 1.2rem;
+            text-shadow: 0 0 8px var(--neon-green);
+            margin-bottom: 10px;
+        }
+
+        .game-card p {
+            color: #fff;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .game-card p strong {
+            color: var(--neon-magenta);
+        }
+
+        .game-card .screenshot {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid var(--neon-magenta);
+            margin-bottom: 20px;
+            background-color: #333;
+        }
+
+        .game-card a {
+            display: block;
+            background: var(--neon-magenta);
+            color: #000;
+            padding: 12px;
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            border: 2px solid #000;
+            transition: all 0.2s;
+            box-shadow: 0 0 10px var(--neon-magenta);
+        }
+
+        .game-card a:hover {
+            background: var(--neon-yellow);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-yellow);
+        }
     </style>
 </head>
 <body>
-    <h1>Mr. Hirsch's Class Arcade 2025</h1>
+    <h1>CLASS ARCADE 2025-2026</h1>
+
     <div class="gallery">
-        <!-- Students' games will be added here -->
+        
+        <!-- Example Game Card 1 -->
         <div class="game-card">
-            <h3>Pong</h3>
-            <p>By: Hirsch</p>
+            <h3>PONG MASTER</h3>
+            <p>BY: <strong>Hirsch</strong></p>
             <!-- Students will provide a screenshot -->
-            <img src="https-placehold-co-600x400.png" alt="Screenshot of Pong">
+            <img src="https://placehold.co/400x300/000000/39ff14?text=PONG" alt="Screenshot of Pong" class="screenshot">
             <!-- Students will provide their game's URL -->
-            <a href="/pong.html" target="_blank">Play Game</a>
+            <a href="https:hirschmi.github.io/pong.html" target="_blank">PLAY GAME</a>
         </div>
-        <!-- Add more game-card divs as students submit -->
+
+        <!-- Example Game Card 2 -->
+        <div class="game-card">
+            <h3>PYTHON PANIC</h3>
+            <p>BY: <strong>Hirsch</strong></p>
+            <img src="https://placehold.co/400x300/000000/0ff?text=SNAKE" alt="Screenshot of Snake" class="screenshot">
+            <a href="https:hirschmi.github.io/snake.html" target="_blank">PLAY GAME</a>
+        </div>
+
+        <!-- Example Game Card 3 -->
+        <div class="game-card">
+            <h3>BRICK BREAKER</h3>
+            <p>BY: <strong>Hirsch</strong></p>
+            <img src="https://placehold.co/400x300/000000/f0f?text=BREAKOUT" alt="Screenshot of Breakout" class="screenshot">
+            <a href="https:hirschmi.github.io/breakout.html" target="_blank">PLAY GAME</a>
+        </div>
+
+        <!-- Add more game-card divs as students submit their projects -->
+
     </div>
 </body>
 </html>
+
+
