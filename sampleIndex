@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 5th Period: The Code Casino</title>
+    
+    <!-- 1. Load Tailwind CSS (MUST BE FIRST: This defines the global 'tailwind' object) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 2. CUSTOM TAILWIND CONFIGURATION (Now loads safely after the library) -->
+    <script>
+        // Fix: Configuration must run AFTER the main Tailwind script is loaded.
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'casino-red': '#DC2626',   /* Roulette Red */
+                        'casino-green': '#10B981', /* Roulette Felt Green Highlight */
+                        'bg-dark': '#000000',      /* Pure Black page background */
+                        'felt-bg': '#173327',      /* Deep Dark Green Felt */
+                        'card-bg': '#0A111F',      /* Deep Charcoal for project cards */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['"Chakra Petch"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 10px rgba(16, 185, 129, 0.7), 0 0 20px rgba(16, 185, 129, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- 3. CUSTOM CSS (Only keyframes and non-Tailwind styles here) -->
+    <style>
+        /* Custom keyframes for a slight pulse effect, using the green color */
+        @keyframes pulse-light {
+            0%, 100% { box-shadow: 0 0 5px rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.8); }
+        }
+        .animate-pulse-light {
+            animation: pulse-light 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-bg-dark min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Casino Lobby Container (Deep Green Felt) -->
+    <div class="w-full max-w-4xl p-6 md:p-10 bg-felt-bg rounded-xl shadow-2xl border-2 border-casino-green/50 animate-pulse-light">
+
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="font-display text-5xl md:text-6xl text-casino-green mb-2 tracking-widest uppercase border-b-4 border-casino-red pb-2">
+                The Code Casino
+            </h1>
+            <p class="text-gray-300 text-xl font-bold">5th Period Computer Science Lab</p>
+            <p class="text-gray-400 mt-3 text-lg italic">Ready to cash in your code?</p>
+        </header>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Project 1: Receipt Generator (Green Border) -->
+            <a href="receipt_project.html" class="group block transform transition duration-300 hover:scale-[1.03] focus:scale-[1.03] focus:outline-none">
+                <div class="p-6 bg-card-bg rounded-lg shadow-xl border-t-4 border-casino-green hover:shadow-glow/70 transition duration-300">
+                    <div class="text-center">
+                        <!-- Icon: Shopping/Transaction (Green) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-casino-green mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                        <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-casino-green">The Receipt Printer</h2>
+                        <p class="text-gray-400 text-sm">Practice with data handling, formatting, and arithmetic operations.</p>
+                        <span class="mt-4 inline-block px-4 py-1.5 bg-casino-red text-white text-sm font-semibold rounded-full group-hover:bg-casino-green group-hover:text-gray-900 transition duration-300">
+                            Start Coding
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 2: Casino Game (Red Border) -->
+            <a href="casino_game_project.html" class="group block transform transition duration-300 hover:scale-[1.03] focus:scale-[1.03] focus:outline-none">
+                <div class="p-6 bg-card-bg rounded-lg shadow-xl border-t-4 border-casino-red hover:shadow-glow/70 transition duration-300">
+                    <div class="text-center">
+                        <!-- Icon: Dice/Game (Red) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-casino-red mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3 .895-3 2 1.343 2 3 2m0-8V6m0 2v-2m0 10v-2m0 2v-2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 12h-2m-2 0h2m-6-4h-2m2 0h2m-2 8h-2m2 0h2m-6 0h-2m2 0h2m-6 0h-2m2 0h2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10a7 7 0 0114 0v4a7 7 0 01-14 0v-4z" />
+                        </svg>
+                        <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-casino-green">The Main Event</h2>
+                        <p class="text-gray-400 text-sm">Focus on randomness, conditional logic, and state management.</p>
+                        <span class="mt-4 inline-block px-4 py-1.5 bg-casino-green text-gray-900 text-sm font-semibold rounded-full group-hover:bg-casino-red group-hover:text-white transition duration-300">
+                            Play & Build
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 3: Calculator (Green Border) -->
+            <a href="calculator_project.html" class="group block transform transition duration-300 hover:scale-[1.03] focus:scale-[1.03] focus:outline-none">
+                <div class="p-6 bg-card-bg rounded-lg shadow-xl border-t-4 border-casino-green hover:shadow-glow/70 transition duration-300">
+                    <div class="text-center">
+                        <!-- Icon: Calculator (Green) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-casino-green mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 0v6m0-6H9m6 0v6m0-6V7m0 6v6m0-6h-6m6 0H9m6 0h6m0 0v6m0-6h-6m6 0h6" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v3a2 2 0 01-2 2z" />
+                        </svg>
+                        <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-casino-green">The Number Cruncher</h2>
+                        <p class="text-gray-400 text-sm">Master user input, parsing strings, and operator precedence.</p>
+                        <span class="mt-4 inline-block px-4 py-1.5 bg-casino-red text-white text-sm font-semibold rounded-full group-hover:bg-casino-green group-hover:text-gray-900 transition duration-300">
+                            Calculate It!
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Footer / Instructions -->
+        <footer class="mt-12 text-center text-gray-400 border-t border-gray-700 pt-6">
+            <p class="text-lg font-semibold mb-2">Instructions:</p>
+            <p class="text-sm">Click any project above to view the assignment, download resources, or submit your final code. May your code compile on the first try!</p>
+        </footer>
+
+    </div>
+</body>
+</html>
